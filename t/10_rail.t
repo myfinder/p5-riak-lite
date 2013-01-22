@@ -2,7 +2,6 @@ use strict;
 use Test::More;
 use Test::Riak::Lite;
 
-use Data::Dump qw/dump/;
 use Riak::Lite;
 
 use JSON;
