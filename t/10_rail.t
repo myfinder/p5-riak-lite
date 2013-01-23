@@ -20,11 +20,11 @@ subtest 'ping and stats' => sub {
 };
 
 subtest 'simple key/value set/get/remove' => sub {
-    ok $riak->get('key') eq undef, 'return undef ok';
+    ok ! defined $riak->get('key'), 'return undef ok';
     ok $riak->set('key', 'value'), 'simple set ok';
     ok $riak->get('key') eq 'value', 'return value ok';
     ok $riak->delete('key'), 'remove key/value ok';
-    ok $riak->get('key') eq undef, 'return undef ok';
+    ok ! defined $riak->get('key'), 'return undef ok';
 };
 
 subtest 'structured value set/get/remove' => sub {
@@ -33,11 +33,11 @@ subtest 'structured value set/get/remove' => sub {
         hoge => [ 'piyo', 'poyo' ],
     };
 
-    ok $riak->get('key') eq undef, 'return undef ok';
+    ok ! defined $riak->get('key'), 'return undef ok';
     ok $riak->set('key', encode_json $value), 'structured value set ok';
     is_deeply decode_json $riak->get('key'), $value, 'return value ok';
     ok $riak->delete('key'), 'remove key/value ok';
-    ok $riak->get('key') eq undef, 'return undef ok';
+    ok ! defined $riak->get('key'), 'return undef ok';
 };
 
 done_testing;
