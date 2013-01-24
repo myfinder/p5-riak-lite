@@ -6,7 +6,6 @@ requires 'Mouse';
 requires 'Cache::LRU';
 requires 'Furl::HTTP';
 requires 'Net::DNS::Lite';
-requires 'Data::Dump';
 
 tests_recursive;
 author_tests 'xt';

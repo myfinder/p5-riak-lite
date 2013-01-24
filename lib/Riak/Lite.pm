@@ -69,8 +69,6 @@ sub get {
 sub set {
     my ($self, $key, $value) = @_;
 
-    use Data::Dump qw/dump/;
-
     my ($minor_version, $code, $msg, $headers, $body) = $self->client->request(
         method     => 'PUT',
         host       => $self->server,
