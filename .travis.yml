@@ -1,4 +1,6 @@
 language: perl
+before_install:
+  - perl Makefile.PL | cpanm
 perl:
   - "5.16"
   - "5.14"
